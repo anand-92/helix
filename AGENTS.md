@@ -39,6 +39,27 @@ Helix is a dual-stack agent framework:
 2. Export it from `python/agents/__init__.py`
 3. Register it in `python/orchestrator.py` `_register_actions()` and `_ACTION_PROMPTS`
 
+## Claude Agent SDK Reference
+
+The `guides/` directory contains full Claude Agent SDK reference docs. **Read these when working on SDK features, actions, or tools:**
+
+- `guides/python.md` — Python SDK API (`AgentDefinition`, `ClaudeAgentOptions`, hooks, etc.)
+- `guides/overview.md` — SDK concepts, auth, permissions
+- `guides/sessions.md` — Session management
+- `guides/skills.md` — Custom skills
+- `guides/subagents.md` — Subagent launching
+- `guides/mcp.md` — MCP server integration
+- `guides/permissions.md` — Tool permissions
+- `guides/streaming-vs-single-mode.md` — Response modes
+- `guides/structured-outputs.md` — Output schemas
+- `guides/modifying-system-prompts.md` — System prompts
+- `guides/slash-commands.md` — Slash commands
+- `guides/plugins.md` — Plugin system
+- `guides/todo-tracking.md` — Todo tracking
+- `guides/cost-tracking.md` — Cost tracking
+- `guides/custom-tools.md` — Custom tools
+- `guides/hosting.md` — Deployment
+
 ## Authentication
 
 The Claude Agent SDK handles auth automatically. No `ANTHROPIC_API_KEY` is required if the user has a Claude Code OAuth subscription. For alternative providers (MiniMax, GLM, etc.), configure `.claude/settings.json` with `ANTHROPIC_BASE_URL` and `ANTHROPIC_AUTH_TOKEN`.

@@ -14,6 +14,7 @@ helix/
     server.py       FastAPI control API + WebSocket
     config.py       All configuration via env vars
     main.py         CLI entry point
+  guides/           Claude Agent SDK reference docs (see below)
   .claude/
     skills/         Claude skills (find-skills included)
     output-styles/  Output style presets
@@ -85,6 +86,30 @@ The Claude Agent SDK handles auth automatically:
 - `ANTHROPIC_API_KEY` — Optional. Only needed if not using Claude Code OAuth.
 - `MEMORY_ENABLED` — Optional. Set `true` to enable persistent memory.
 - `GEMINI_API_KEY` — Only if memory enabled. For memory embeddings.
+
+## Claude Agent SDK Reference
+
+The `guides/` directory contains full reference documentation for the Claude Agent SDK. Consult these when working on SDK-related features or actions:
+
+| Guide | Topic |
+|-------|-------|
+| `guides/overview.md` | SDK introduction, auth, core concepts |
+| `guides/python.md` | Python SDK usage, `AgentDefinition`, `ClaudeAgentOptions` |
+| `guides/quickstart.md` | Getting started with Agent Skills |
+| `guides/sessions.md` | Session management and lifecycle |
+| `guides/skills.md` | Creating and using custom skills |
+| `guides/subagents.md` | Launching subagents programmatically |
+| `guides/mcp.md` | Model Context Protocol (MCP) integration |
+| `guides/permissions.md` | Tool permissions and access control |
+| `guides/streaming-vs-single-mode.md` | Streaming vs single-response modes |
+| `guides/structured-outputs.md` | Enforcing structured output formats |
+| `guides/modifying-system-prompts.md` | Custom system prompts and CLAUDE.md |
+| `guides/slash-commands.md` | Custom slash commands |
+| `guides/plugins.md` | SDK plugin system |
+| `guides/todo-tracking.md` | Built-in todo tracking |
+| `guides/cost-tracking.md` | Token cost tracking |
+| `guides/custom-tools.md` | Building custom tools |
+| `guides/hosting.md` | Deploying agents |
 
 ## Conventions
 
