@@ -22,6 +22,10 @@
 
 ---
 
+<p align="center">
+  <img src="docs/screenshots/dashboard.png" alt="Helix Dashboard" width="100%">
+</p>
+
 ## Why Helix?
 
 Most agent frameworks leave you staring at a terminal, guessing what your agent is doing. **Helix** gives you a beautiful, real-time dashboard to observe, control, and debug your Claude-powered agents as they run.
