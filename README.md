@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/banner.jpg" alt="Helix Banner" width="100%">
+</p>
+
 # Helix
 
 <p align="center">
