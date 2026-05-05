@@ -41,7 +41,9 @@ Most agent frameworks leave you staring at a terminal, guessing what your agent 
 - Python 3.10+
 - Node.js 18+
 - [uv](https://docs.astral.sh/uv/) (Python package manager)
-- Anthropic API key (`ANTHROPIC_API_KEY`)
+- A **Claude Code OAuth subscription** OR an Anthropic-compatible API key
+
+> **No API key? No problem.** If you have a Claude Code subscription, Helix works out of the box — the Claude Agent SDK automatically uses your subscription. No `ANTHROPIC_API_KEY` required.
 
 ### Install & Run
 
@@ -177,13 +179,47 @@ Then reload the dashboard and your new action appears as a toggleable card.
 
 ---
 
+## Authentication & Model Providers
+
+Helix uses the Claude Agent SDK under the hood, which supports multiple authentication methods:
+
+### Option 1: Claude Code OAuth (default, no setup)
+
+If you have an active **Claude Code subscription**, the SDK will automatically authenticate via OAuth. No API keys, no `.env` edits. Just run it.
+
+### Option 2: Anthropic API key
+
+Set `ANTHROPIC_API_KEY` in your `.env` file to use a direct Anthropic API key instead of OAuth.
+
+### Option 3: Any Anthropic-compatible endpoint
+
+You can point the SDK at any provider that implements the Anthropic API format. Copy one of the example configs below into `.claude/settings.json`:
+
+**MiniMax**
+```json
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api.minimax.io/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "<YOUR_MINIMAX_KEY>",
+    "ANTHROPIC_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "MiniMax-M2.7"
+  }
+}
+```
+
+> **Note:** The Claude Agent SDK respects `ANTHROPIC_BASE_URL` and `ANTHROPIC_AUTH_TOKEN` from `.claude/settings.json`. Any provider with an Anthropic-compatible API (MiniMax, GLM, local proxies, etc.) works the same way — just swap the base URL and token.
+
+---
+
 ## Environment Variables
 
 Copy `.env.example` to `.env` and configure:
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `ANTHROPIC_API_KEY` | Anthropic API key | Yes |
+| `ANTHROPIC_API_KEY` | Anthropic API key (only if not using OAuth) | No |
 | `MEMORY_ENABLED` | Enable persistent memory | No (default: `false`) |
 | `GEMINI_API_KEY` | Gemini API key for memory embeddings | Only if memory enabled |
 

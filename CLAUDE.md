@@ -72,9 +72,17 @@ uv run ruff check python
 uv run ruff format python
 ```
 
+## Authentication
+
+The Claude Agent SDK handles auth automatically:
+
+- **Claude Code OAuth subscription** — Works out of the box, no API key needed.
+- **Anthropic API key** — Set `ANTHROPIC_API_KEY` in `.env`.
+- **Other providers** — Set `ANTHROPIC_BASE_URL` + `ANTHROPIC_AUTH_TOKEN` in `.claude/settings.json`. See `.claude/settings.minimax.json` for an example.
+
 ## Environment Variables
 
-- `ANTHROPIC_API_KEY` — Required. Anthropic API key.
+- `ANTHROPIC_API_KEY` — Optional. Only needed if not using Claude Code OAuth.
 - `MEMORY_ENABLED` — Optional. Set `true` to enable persistent memory.
 - `GEMINI_API_KEY` — Only if memory enabled. For memory embeddings.
 
